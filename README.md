@@ -784,7 +784,7 @@ premake5.lua
 newoption {
     trigger = "arch",
     description = "Set the current target architecture",
-    default = "x86"
+    default = "x86",
     allowed = {
         { "x86", "32 bit target architecture" },
         { "x86_64", "64 bit target architecture" },
