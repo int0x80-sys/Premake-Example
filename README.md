@@ -524,6 +524,27 @@ Y eso sería todo. Para probar que todo funcione simplemente ejecutamos los prog
 
 Aclaración: dado que Premake genera los Makefiles, cada vez que se agregue un archivo nuevo dentro de algun proyecto, se debe ejecutar Premake nuevamente para que el nuevo archivo sea incluido dentro del Makefile.
 
+## Usando Eclipse
+Si bien esto no tiene mucho que ver especificamente con Premake, vamos a ver como hacer para usar Eclipse junto con Premake. Básicamente importamos los proyectos como **proyectos de Makefile** de la siguiente manera:
+
+* Dentro del IDE, hacemos click derecho sobre el workspace > Importar:
+![ImportImg](img/1.jpg)
+
+* Luego seleccionamos en **C/C++ > Existing Code as Makefile Project**:
+![MakefileImg](img/2.jpg)
+
+* Buscamos el directorio dentro del workspace de uno de nuestros proyectos. En mi caso, voy a seleccionar el de utils. En lenguaje seleccionamos C y en los ToolChain seleccionamos Linux GCC:
+![UtilsImg](img/3.jpg)
+
+* Una vez hecho esto, ya deberíamos ver nuestro proyecto en el workspace. Probamos que todo haya salido correctamente. Hacemos click derecho sobre el proyecto y luego en **Build Project**:
+![BuildImg](img/4.jpg)
+
+* Esto nos deberia mostrar los pasos de compilación como se muestra en la siguiente imagen. Si no se llegaran a ver, pueden intentar hacer click derecho sobre el proyecto > **Clear Project** y luego buildear nuevo siguiendo el paso anterior:
+![CompileImg](img/5.jpg)
+
+Y listo. Debemos repetir estos pasos de la misma manera para los otros tres proyectos.
+Aclaración: de la misma manera que hay que correr Premake cuando agregamos nuevos archivos al proyecto con los Makefiles, tambien debemos hacerlo cuando agregamos archivos desde Eclipse (ya que Eclipse lo único que hace, en esencia, es correr los Makefiles).
+
 ## TL;DR
 
 Con todo lo anterior ya estamos en condiciones de setear cualquier workspace o proyecto de C usando Premake. Lo que sigue a continuación son algunas topicos extra que nos pueden ser de utilidad para organizar mejor nuestros scripts.
@@ -784,7 +805,7 @@ premake5.lua
 newoption {
     trigger = "arch",
     description = "Set the current target architecture",
-    default = "x86"
+    default = "x86",
     allowed = {
         { "x86", "32 bit target architecture" },
         { "x86_64", "64 bit target architecture" },

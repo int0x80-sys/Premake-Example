@@ -7,3 +7,8 @@
 
 #output direcotires
 outputs
+
+#Eclipse files
+*.cproject
+*.project
+*.xml
