@@ -1,0 +1,9 @@
+#vs files and folders
+.vs*
+
+#Makefiles
+*Makefile
+*.make
+
+#output direcotires
+outputs
