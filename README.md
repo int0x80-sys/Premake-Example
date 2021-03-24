@@ -528,19 +528,19 @@ Aclaración: dado que Premake genera los Makefiles, cada vez que se agregue un a
 Si bien esto no tiene mucho que ver especificamente con Premake, vamos a ver como hacer para usar Eclipse junto con Premake. Básicamente importamos los proyectos como **proyectos de Makefile** de la siguiente manera:
 
 * Dentro del IDE, hacemos click derecho sobre el workspace > Importar:
-![ImportImg](img/1.jpg)
+![ImportImg](img/1.png)
 
 * Luego seleccionamos en **C/C++ > Existing Code as Makefile Project**:
-![MakefileImg](img/2.jpg)
+![MakefileImg](img/2.png)
 
 * Buscamos el directorio dentro del workspace de uno de nuestros proyectos. En mi caso, voy a seleccionar el de utils. En lenguaje seleccionamos C y en los ToolChain seleccionamos Linux GCC:
-![UtilsImg](img/3.jpg)
+![UtilsImg](img/3.png)
 
 * Una vez hecho esto, ya deberíamos ver nuestro proyecto en el workspace. Probamos que todo haya salido correctamente. Hacemos click derecho sobre el proyecto y luego en **Build Project**:
-![BuildImg](img/4.jpg)
+![BuildImg](img/4.png)
 
 * Esto nos deberia mostrar los pasos de compilación como se muestra en la siguiente imagen. Si no se llegaran a ver, pueden intentar hacer click derecho sobre el proyecto > **Clear Project** y luego buildear nuevo siguiendo el paso anterior:
-![CompileImg](img/5.jpg)
+![CompileImg](img/5.png)
 
 Y listo. Debemos repetir estos pasos de la misma manera para los otros tres proyectos.
 Aclaración: de la misma manera que hay que correr Premake cuando agregamos nuevos archivos al proyecto con los Makefiles, tambien debemos hacerlo cuando agregamos archivos desde Eclipse (ya que Eclipse lo único que hace, en esencia, es correr los Makefiles).
